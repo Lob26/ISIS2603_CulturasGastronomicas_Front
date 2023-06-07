@@ -1,0 +1,15 @@
+<div cdkDropList cdkDropListOrientation="horizontal" class="d-flex flex-row example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box card" *ngFor="let recipe of recipes" cdkDrag>
+    <div class="image-wrapper-sq">
+      <img [src]="recipe.urls[0].url" alt='' class="custom_img-sq card-img-top ratio-1x1"
+           (error)="this.recipe.urls[0].url = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'">
+    </div>
+    <div class="card-body text-center">
+      <a class="card-title" [href]="'/recipe?id=' + recipe.id">{{ recipe.name }}</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center mt-3 text-light order-last">Total de recetas: {{ recipes.length }}</div>
+

@@ -1,0 +1,28 @@
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display the correct product name', () => {
+      const nameElement = DebugElement.query(By.css('p.h3'));
+      expect(nameElement.nativeElement.textContent).toContain(component.productDetail.name);
+    });
+
+    it('should display the correct brand', () => {
+      const brandElement = DebugElement.queryAll(By.css('dd'))[0];
+      expect(brandElement.nativeElement.textContent).toContain(component.productDetail.brand);
+    });
+
+    it('should display the correct category name', () => {
+      const categoryElement = DebugElement.queryAll(By.css('dd'))[1];
+      expect(categoryElement.nativeElement.textContent).toContain(component.productDetail.category.name);
+    });
+
+    it('should display the correct culture name', () => {
+      const cultureElement = DebugElement.queryAll(By.css('dd'))[2];
+      expect(cultureElement.nativeElement.textContent).toContain(component.productDetail.category.culture.name);
+    });
+
+    it('should display the correct culture description', () => {
+      const descriptionElement = DebugElement.queryAll(By.css('dd'))[3];
+      expect(descriptionElement.nativeElement.textContent).toContain(component.productDetail.category.culture.description);
+    });

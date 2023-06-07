@@ -1,0 +1,40 @@
+beforeEach(() => {
+    fixture = TestBed.createComponent(GastronomicCategoryListComponent);
+    component = fixture.componentInstance;
+
+    const culture1 = new GastronomicCulture(1, 'Culture 1', 'Description 1');
+    const culture2 = new GastronomicCulture(2, 'Culture 2', 'Description 2');
+
+    const category1 = new GastronomicCategory('Category 1', culture1);
+    const category2 = new GastronomicCategory('Category 2', culture2);
+
+    const product1 = new RepresentativeProduct('Product 1', 'Brand 1', category1);
+    const product2 = new RepresentativeProduct('Product 2', 'Brand 2', category2);
+
+    category1.products.push(product1);
+    category2.products.push(product2);
+
+    component.categories = [category1, category2];
+
+    fixture.detectChanges();
+    debug = fixture.debugElement;
+  });
+
+it('should display the correct number of categories', () => {
+    const categories = component.categories;
+    const tableRows = fixture.debugElement.queryAll(By.css('tr'));
+    expect(tableRows.length).toBe(categories.length);
+  });
+
+  it('should display the correct category name and culture', () => {
+    const categories = component.categories;
+    const tableRows = fixture.debugElement.queryAll(By.css('tr'));
+
+    tableRows.forEach((row: any, index: number) => {
+      const nameCell = row.query(By.css('td:first-child'));
+      const cultureCell = row.query(By.css('td:nth-child(2)'));
+
+      expect(nameCell.nativeElement.textContent.trim()).toBe(categories[index].name);
+      expect(cultureCell.nativeElement.textContent.trim()).toBe(categories[index].culture);
+    });
+  });

@@ -1,0 +1,36 @@
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.card {
+  flex: 1 0 300px;
+  margin: 15px;
+}
+
+.row {
+  flex-grow: 1;
+}
+
+.d-flex {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.d-flex::-webkit-scrollbar {
+  width: 6px;
+}
+
+.d-flex::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.d-flex::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.text-center {
+  margin-top: auto;
+}

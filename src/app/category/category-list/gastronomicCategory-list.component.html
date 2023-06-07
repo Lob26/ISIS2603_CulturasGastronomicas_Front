@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row bg-white py-3">
+    <div class="col">
+      <h2>Categorias</h2>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-6">
+      <table class="table table-hover">
+        <caption>Tabla de categorías gastronomicas</caption>
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col" id="name-header">Name</th>
+          <th scope="col" id="culture-header">Culture</th>
+          <th scope="col" id="products-header">Products</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of categories">
+          <td>{{c.name}}</td>
+          <td>{{c.culture}}</td>
+          <td>{{c.products}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="text-center mt-3 text-light order-last">Total de categorias: {{ categories.length }}</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://content.presspage.com/clients/o_685.jpg" class="card-img-top" alt="Imagen de la oferta">
+  <div class="card-body">
+    <h5 class="card-title">Conoce las culturas desde su lugar de origen</h5>
+    <p class="card-text">¡No esperes más!</p>
+    <a href="https://www.booking.com" class="btn btn-primary">Reservar en Booking.com</a>
+  </div>
+</div>

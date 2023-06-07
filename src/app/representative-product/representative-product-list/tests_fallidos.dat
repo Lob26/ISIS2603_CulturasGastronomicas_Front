@@ -1,0 +1,48 @@
+const category1 = {
+    name: 'Category 1',
+    culture: {
+      id: 1,
+      name: 'Culture 1',
+      description: 'Description 1'
+    }
+  };
+
+  const category2 = {
+    name: 'Category 2',
+    culture: {
+      id: 2,
+      name: 'Culture 2',
+      description: 'Description 2'
+    }
+  };
+
+  const product1 = new RepresentativeProduct('Product 1', 'Brand 1', category1);
+  const product2 = new RepresentativeProduct('Product 2', 'Brand 2', category2);
+
+  component.products = [product1, product2];
+
+  fixture.detectChanges();
+  debug = fixture.debugElement;
+});
+
+it('should display the correct number of products', () => {
+    const tableRows = debug.queryAll(By.css('tbody tr'));
+    expect(tableRows.length).toEqual(component.products.length);
+  });
+
+  it('should display the product names, brands, categories, and culture names in the table', () => {
+    const tableRows = debug.queryAll(By.css('tbody tr'));
+
+    tableRows.forEach((row, index) => {
+      const product = component.products[index];
+      const nameCell = row.query(By.css('td:nth-child(1)'));
+      const brandCell = row.query(By.css('td:nth-child(2)'));
+      const categoryCell = row.query(By.css('td:nth-child(3)'));
+      const cultureCell = row.query(By.css('td:nth-child(4)'));
+
+      expect(nameCell.nativeElement.textContent).toContain(product.name);
+      expect(brandCell.nativeElement.textContent).toContain(product.brand);
+      expect(categoryCell.nativeElement.textContent).toContain(product.category.name);
+      expect(cultureCell.nativeElement.textContent).toContain(product.category.culture!.name);
+    });
+  });

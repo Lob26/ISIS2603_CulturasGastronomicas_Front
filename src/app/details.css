@@ -1,0 +1,21 @@
+.image-wrapper {
+  height: 50%; /* Establece la altura fija deseada para todas las imágenes */
+  overflow: hidden;
+}
+
+.custom_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-wrapper-sq {
+  height: 50%; /* Establece la altura fija deseada para todas las imágenes */
+  overflow: hidden;
+}
+
+.custom_img-sq {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,11 @@
+<div cdkDropList cdkDropListOrientation="horizontal" class="d-flex flex-row example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box card" *ngFor="let culture of cultures" cdkDrag>
+    <img [src]="culture.url" alt='' class="custom_img card-img-top ratio-1x1"
+         (error)="this.culture.url = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'">
+    <div class="card-body text-center">
+      <a class="card-title" [href]="'/culture?id=' + culture.id">{{ culture.name }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-3 text-light order-last">Total de culturas: {{ cultures.length }}</div>

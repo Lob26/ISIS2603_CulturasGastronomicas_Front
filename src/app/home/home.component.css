@@ -1,0 +1,33 @@
+.square-svg {
+  height: 20vh;
+}
+
+.display-custom {
+  font-size: calc(1.625rem + 4.5vw);
+  font-weight: 300;
+  line-height: 1.2
+}
+
+@media (min-width: 1200px) {
+  .display-custom {
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.2
+  }
+}
+
+@media (max-width: 750px) {
+  .display-custom {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2
+  }
+}
+
+@media (max-width: 500px) {
+  .display-custom {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.2
+  }
+}
